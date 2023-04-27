@@ -41,9 +41,18 @@ def main():
     node2 = Node(2, node3)
     node1 = Node(1, node2)
 
-    print_list(node1)
+    # print_list(node1)
+    # print("\n")
+    # print_list(dedup_sorted_list(node1))
+
+    node13 = Node(8)
+    node12 = Node(8, node13)
+    node11 = Node(8, node12)
+    node10 = Node(8, node11)
+
+    print_list(node10)
     print("\n")
-    print_list(dedup_sorted_list(node1))
+    print_list(dedup_sorted_list(node10))
 
 main()
 

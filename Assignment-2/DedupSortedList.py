@@ -66,8 +66,18 @@ def main():
     node1 = Node(1, node2)
 
     print_list(node1) # Output: | 1 | 2 | 2 | 4 | 5 | 5 | 5 | 10 | 10 |
-    print("\n")
     print_list(dedup_sorted_list(node1)) # Output: | 1 | 2 | 4 | 5 | 10 |
+
+    
+    node13 = Node(8)
+    node12 = Node(8, node13)
+    node11 = Node(8, node12)
+    node10 = Node(8, node11)
+
+    print_list(node10)  # Output: | 8 | 8 | 8 | 8 |
+    print_list(dedup_sorted_list(node10)) # Ouput: | 8 |
+
+    
 
 main()
 
