@@ -5,8 +5,8 @@ Raina Wan
 Copy Tree:
 Given a binary tree, create a deep copy. Return the root of the new tree.
 
-Time Complexity: O(n)
-Space Complexity: O(n)
+Time Complexity: O(n) => Visit every node
+Space Complexity: O(n) => Make copy of every node
 
 Technique:
 Breadth First Search

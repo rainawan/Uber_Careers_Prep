@@ -1,3 +1,27 @@
+"""
+Raina Wan
+04-26-2023
+
+DedupSortedList:
+Given a sorted singly linked list, remove any duplicates so that no value appears more than once.
+
+Time Complexity: O(n) => Traverse through every node to find duplicates
+Space Complexity: O(1)
+
+Technique:
+Linked list fixed-distance two-pointer
+
+Time Spent:
+30 minutes
+
+Approach:
+Set prev pointer to dummy node and curr to head. 
+If prev == curr, move curr forward and remove duplicate
+Otherwise, move prev and curr forwards
+"""
+
+
+
 class Node:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -41,9 +65,9 @@ def main():
     node2 = Node(2, node3)
     node1 = Node(1, node2)
 
-    print_list(node1)
+    print_list(node1) # Output: | 1 | 2 | 2 | 4 | 5 | 5 | 5 | 10 | 10 |
     print("\n")
-    print_list(dedup_sorted_list(node1))
+    print_list(dedup_sorted_list(node1)) # Output: | 1 | 2 | 4 | 5 | 10 |
 
 main()
 

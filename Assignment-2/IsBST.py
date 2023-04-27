@@ -1,12 +1,12 @@
 """
 Raina Wan
-04-26-2022
+04-26-2023
 
 Is Binary Search Tree:
 Given a binary tree, determine if it is a binary search tree.
 
 Time Complexity: O(n) => worst case: must visit all nodes to determine if BST
-Space Complexity: O(n)
+Space Complexity: O(1)
 
 Technique:
 Breadth First Search
