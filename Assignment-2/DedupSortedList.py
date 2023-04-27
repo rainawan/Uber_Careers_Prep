@@ -20,8 +20,6 @@ If prev == curr, move curr forward and remove duplicate
 Otherwise, move prev and curr forwards
 """
 
-
-
 class Node:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -78,6 +76,5 @@ def main():
     print_list(dedup_sorted_list(node10)) # Ouput: | 8 |
 
     
-
 main()
 
