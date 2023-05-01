@@ -4,7 +4,7 @@ Raina Wan
 
 Binary Search Tree
 """
-
+COUNT = [10]
 class Node:
     def __init__(self, val):
         self.val = val
@@ -76,8 +76,23 @@ class BST:
                     curr = curr.left
                 val = curr.val
         val = None
-    
 
+def print2D(root, space):
+    if not root:
+        return
+ 
+    space += COUNT[0]
+    print2D(root.right, space)
+ 
+    print()
+    for i in range(COUNT[0], space):
+        print(end=" ")
+    print(root.val)
+ 
+    print2D(root.left, space)
+
+def print_tree(root):
+    print2D(root, 0)
         
 
 def main():
