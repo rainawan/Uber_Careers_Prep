@@ -9,13 +9,13 @@ def create_graph(values):
             graph[y] = []
     return graph
 
-def dfs(root, target, graph, visited):
+def dfs(root, graph, visited):
     if root not in visited:
-        visited.add(root)
+        visited.append(root)
         for neighbor in graph[root]:
             # if neighbor == target:
             #     return True
-            dfs(neighbor, target, graph, visited)
+            dfs(neighbor, graph, visited)
     return visited
     # return False
 
@@ -55,7 +55,7 @@ def main():
     graph = add_edge(3, 5, graph)
     graph = add_edge(0, 2, graph)
     print_graph(graph)
-    print(_dfs(1, graph))
-    print(bfs(graph, 0))
+    print(dfs(1, graph, []))
+    print(bfs(graph, 1))
 
 main()
