@@ -50,12 +50,10 @@ def print_graph(graph):
     for x in sorted(graph.keys()):
         print(x, ":", graph[x])
 
-def main():
+if __name__ == "__main__":
     graph = create_graph([(1, 2), (3, 2), (2, 3), (1, 3), (2, 0)])
     graph = add_edge(3, 5, graph)
     graph = add_edge(0, 2, graph)
     print_graph(graph)
     print(dfs(1, graph, []))
     print(bfs(graph, 1))
-
-main()

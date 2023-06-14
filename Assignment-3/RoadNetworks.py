@@ -46,7 +46,7 @@ def road_networks(towns, roads):
     
     return count
 
-def main():
+if __name__ == "__main__":
     print(road_networks(
         ["Skagway", "Juneau", "Gustavus", "Homer", "Port Alsworth", "Glacier Bay", 
         "Fairbanks", "McCarthy", "Copper Center", "Healy", "Anchorage"],
@@ -67,8 +67,6 @@ def main():
     # Networks: Kona - Hilo - Volcano
     #           Haiku - Kahului - Lahaina - Hana
     #           Lihue - Waimea - Princeville
-
-main()
     
 
 """

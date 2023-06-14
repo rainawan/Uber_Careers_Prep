@@ -44,7 +44,7 @@ def alternating_path(paths, origin, destination):
     return -1
     
 
-def main():
+if __name__ == "__main__":
     print(alternating_path([('A', 'B', "blue"), ('A', 'C', "red"), ('B', 'D', "blue"), 
                             ('B', 'E', "blue"), ('C', 'B', "red"), ('D', 'C', "blue"), 
                             ('A', 'D', "red"), ('D', 'E', "red"), ('E', 'C', "red")], 
@@ -59,8 +59,6 @@ def main():
     # Output: -1
     # Invalid path: E→C (red), C→B (red), B→D (blue)
 
-
-main()
 
 
 """

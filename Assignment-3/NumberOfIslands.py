@@ -51,7 +51,7 @@ def num_islands(board):
     return count
 
 
-def main():
+if __name__ == "__main__":
     board = [
         [1, 0, 1, 1, 1],
         [1, 1, 0, 1, 1],
@@ -66,5 +66,3 @@ def main():
         [0, 0, 0]
     ]
     print(num_islands(board)) # Output: 1
-
-main()

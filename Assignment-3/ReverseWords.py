@@ -30,11 +30,9 @@ def reverse_words(input):
     return " ".join(res) 
 
 
-def main():
+if __name__ == "__main__":
     print(reverse_words("Uber Career Prep"))
     # Output: Prep Career Uber
 
     print(reverse_words("Emma lives in Brooklyn, New York."))
     # Output: York. New Brooklyn, in lives Emma
-
-main()
