@@ -16,5 +16,3 @@ __ minutes
 Approach:
 
 """
-
-# if __name__ == "__main__":
