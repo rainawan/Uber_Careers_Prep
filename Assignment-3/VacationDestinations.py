@@ -7,8 +7,8 @@ Given an origin city, a maximum travel time k, and pairs of destinations that ca
 from each other with corresponding travel times in hours, return the number of destinations within k 
 hours of the origin. Assume that having a stopover in a city adds an hour of travel time.
 
-Time Complexity: O(E*log(V^2)) => 
-Space Complexity: 
+Time Complexity: O(E*log(V^2)) => Traversing cities where every path has two cities 
+Space Complexity: O(E + V) => Creating map of cities (vertices) and paths (edges)
 
 Technique: 
 BFS Graph Traversal
@@ -17,7 +17,10 @@ Time Spent:
 40 minutes
 
 Approach:
-
+1) Create map where key is origin city and value is (destination, distance).
+2) Create queue, appending the origin and current distance travelled.
+3) Visit neighboring cities, adding the respective distance. Add new cities to res.
+4) Continue until distance exceeds k
 """
 
 

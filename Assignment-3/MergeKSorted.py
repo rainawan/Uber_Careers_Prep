@@ -6,7 +6,7 @@ Merge K Sorted Arrays:
 Given an array of k sorted arrays, merge the k arrays into a single sorted array.
 
 Time Complexity: O(k logn) => insertion operation for heap is O(log n). There are k arrays
-Space Complexity: O(k * n) => heap contains k arrays, each array with n elements
+Space Complexity: O(k) => heap contains k arrays
 
 Technique:
 Heap
