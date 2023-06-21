@@ -1,4 +1,27 @@
-from collections import defaultdict
+"""
+Raina Wan
+06-17-2023
+
+Vacation Destinations:
+Given an origin city, a maximum travel time k, and pairs of destinations that can be reached directly 
+from each other with corresponding travel times in hours, return the number of destinations within k 
+hours of the origin. Assume that having a stopover in a city adds an hour of travel time.
+
+Time Complexity: O(E*log(V^2)) => 
+Space Complexity: 
+
+Technique: 
+BFS Graph Traversal
+
+Time Spent:
+40 minutes
+
+Approach:
+
+"""
+
+
+from collections import defaultdict, deque
 
 def vacation_destinations(cities, origin, k):
     travel_map = defaultdict(list)
@@ -6,34 +29,41 @@ def vacation_destinations(cities, origin, k):
         travel_map[start].append((end, dist))
         travel_map[end].append((start, dist))
 
-    res = 0
+    q = deque([])
+    q.append((origin, -1))
+    visited = set()
+    res = []
 
-    def dfs(city, dist, num_cities):
+    while q:
+        city, dist = q.popleft()
         if city in visited:
-            return 0
-        if dist > k:
-            return 0
-        
+            continue
         visited.add(city)
-        num_cities += 1
-
-        for neigh, distance in travel_map[city]:
-            dfs(neigh, distance + dist, num_cities)
-            return num_cities
         
-        visited.remove(city)
-
-    for neigh, distance in travel_map[origin]:
-        visited = set()
-        res += dfs(neigh, 0, res)
-        print(visited)
+        if dist != -1 and dist <= k:
+            res.append(city)
+        
+        for neigh, distance in travel_map[city]:
+            newDist = dist + distance + 1 # total distance + 1 hour travel time
+            q.append((neigh, newDist))
     
-    print(res)
+    return (len(res), res)
 
-    
+
 
 if __name__ == "__main__":
-    vacation_destinations([("Boston", "New York", 4), ("New York", "Philadelphia", 2), 
-                        ("Boston", "Newport", 1.5), ("Washington, D.C.", "Harper's Ferry", 1), 
-                        ("Boston", "Portland", 2.5), ("Philadelphia", "Washington, D.C.", 2.5)],
-                        "New York", 5)
+    cities = [("Boston", "New York", 4), ("New York", "Philadelphia", 2), 
+              ("Boston", "Newport", 1.5), ("Washington, D.C.", "Harper's Ferry", 1), 
+              ("Boston", "Portland", 2.5), ("Philadelphia", "Washington, D.C.", 2.5)]
+
+    print(vacation_destinations(cities,"New York", 5))
+    # Number of destinations: 2
+    # Destinations: ['Boston', 'Philadelphia']
+
+    print(vacation_destinations(cities,"New York", 7))
+    # Number of destinations: 4
+    # Destinations: ['Boston', 'Philadelphia', 'Newport', 'Washington, D.C.']
+
+    print(vacation_destinations(cities,"New York", 8))
+    # Number of destinations: 6
+    # Destinations: ['Boston', 'Philadelphia', 'Newport', 'Portland', 'Washington, D.C.', "Harper's Ferry"]
