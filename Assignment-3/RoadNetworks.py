@@ -8,8 +8,8 @@ same road network. Given a list of towns and a list of pairs representing roads 
 number of road networks. (For example, a state in which all towns are connected by roads has 1 road network,
 and a state in which none of the towns are connected by roads has 0 road networks.)
 
-Time Complexity: 
-Space Complexity: 
+Time Complexity: T(n + m) => visit each town and road 
+Space Complexity: T(n + m) => creating map with n cities and m roads
 
 Technique:
 Depth-first search
@@ -18,7 +18,9 @@ Time Spent:
 35 minutes
 
 Approach:
-
+1) Create map of connecting cities
+2) Traverse through each town, added to set. If connecting city,
+   keep traversing. Otherwise, increase count (indicating disconnecting city)
 """
 
 from collections import defaultdict
