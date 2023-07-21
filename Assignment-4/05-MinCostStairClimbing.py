@@ -14,19 +14,20 @@ Time Spent:
 25 minutes
 """
 
+
 def stair_climbing(stairs):
-    stairs.append(0) # final stair
-    
+    stairs.append(0)  # final stair
+
     # iterate backwards to find min cost for each step
     # len(stairs) - 3 to start at second to last element
     for i in range(len(stairs) - 3, -1, -1):
         option1 = stairs[i] + stairs[i+1]
         option2 = stairs[i] + stairs[i+2]
         stairs[i] = min(option1, option2)
-    
+
     # return min of first two values
     return min(stairs[0], stairs[1])
- 
+
 
 if __name__ == "__main__":
     print(stair_climbing([4, 1, 6, 3, 5, 8]))
